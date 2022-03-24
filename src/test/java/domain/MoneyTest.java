@@ -9,19 +9,26 @@ public class MoneyTest {
 	@Test
 	@DisplayName("$5 X 2 = $10")
 	public void testMultiplication() {
+		//Given
 		Dollar five = new Dollar(5);
-		Dollar ten = five.times(2);
-		Assertions.assertEquals(10, ten.amount);
+
+		//When
+
+		//Then
+		Assertions.assertEquals(new Dollar(10), five.times(2));
 	}
 
 	@Test
 	@DisplayName("Dollar 부작용(side effect)?")
 	public void testMultiplicationTwice() {
+		//Given
 		Dollar five = new Dollar(5);
-		Dollar product = five.times(2);
-		Assertions.assertEquals(10, product.amount);
-		product = five.times(3);
-		Assertions.assertEquals(15, product.amount);
+
+		//When
+
+		//Then
+		Assertions.assertEquals(new Dollar(10), five.times(2));
+		Assertions.assertEquals(new Dollar(15), five.times(3));
 	}
 
 	@Test
@@ -33,11 +40,9 @@ public class MoneyTest {
 		Dollar six = new Dollar(6);
 
 		//When
-		boolean expectTrue = five.equals(fiveAnother);
-		boolean expectFalse = five.equals(six);
 
 		//Then
-		Assertions.assertEquals(true, expectTrue);
-		Assertions.assertEquals(false, expectFalse);
+		Assertions.assertEquals(true, five.equals(fiveAnother));
+		Assertions.assertEquals(false, five.equals(six));
 	}
 }
