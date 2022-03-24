@@ -45,4 +45,17 @@ public class MoneyTest {
 		Assertions.assertEquals(true, five.equals(fiveAnother));
 		Assertions.assertEquals(false, five.equals(six));
 	}
+
+	@Test
+	@DisplayName("5CHF X 2 = 10CHF")
+	public void testFrancMultiplication() {
+		//Given
+		Franc five = new Franc(5);
+
+		//When
+
+		//Then
+		Assertions.assertEquals(new Franc(10), five.times(2));
+		Assertions.assertEquals(new Franc(15), five.times(3));
+	}
 }
