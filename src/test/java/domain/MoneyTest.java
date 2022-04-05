@@ -32,7 +32,7 @@ public class MoneyTest {
 	}
 
 	@Test
-	@DisplayName("equals() : $5 == $5, $5 != $6, 5CHF == 5CHF, 5CHF != 6CHF")
+	@DisplayName("equals() : $5 == $5, $5 != $6, 5CHF == 5CHF, 5CHF != 6CHF, 5CHF != $5")
 	public void testEquality() {
 		//Given
 
@@ -43,6 +43,7 @@ public class MoneyTest {
 		Assertions.assertEquals(false, new Dollar(5).equals(new Dollar(6)));
 		Assertions.assertEquals(true, new Franc(5).equals(new Franc(5)));
 		Assertions.assertEquals(false, new Franc(5).equals(new Franc(6)));
+		Assertions.assertEquals(false, new Franc(5).equals(new Dollar(5)));
 	}
 
 	@Test
